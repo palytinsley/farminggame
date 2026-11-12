@@ -1,0 +1,122 @@
+:root {
+  --green: #1F3A2B;
+  --green-2: #2F5E3A;
+  --cream: #F6F0E1;
+  --tan: #EDE3C8;
+  --line: #CDBE95;
+  --gold: #E0A526;
+  --brown: #8A4A1E;
+  --red: #A8432C;
+  --ink: #2E3B2A;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--cream); color: var(--ink); font-family: 'Open Sans', Arial, sans-serif; }
+[hidden] { display: none !important; }
+button, select, input, textarea { font: inherit; color: inherit; }
+
+/* ---------- buttons ---------- */
+.btn { border: 2px solid var(--green); background: var(--cream); color: var(--green); border-radius: 999px; padding: 8px 18px; font-weight: 600; cursor: pointer; }
+.btn:hover { background: var(--tan); }
+.btn.primary { background: var(--green); color: var(--cream); }
+.btn.primary:hover { background: var(--green-2); }
+.btn.ghost { border-color: var(--line); }
+.btn.big { font-size: 20px; padding: 14px 30px; }
+.btn.small { font-size: 14px; padding: 4px 12px; }
+.btn.file { position: relative; overflow: hidden; display: inline-block; }
+.btn.file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+/* ---------- home ---------- */
+#home { position: fixed; inset: 0; display: flex; align-items: center; padding: 16px; }
+.home-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.home-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 45%, rgba(246,240,225,.93) 0%, rgba(246,240,225,.6) 50%, rgba(246,240,225,0) 80%); }
+.home-card { position: relative; max-width: 720px; margin-left: clamp(0px, 7vw, 120px); }
+.eyebrow { font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--brown); margin: 0 0 8px; }
+#home-title { font-family: Arvo, Georgia, serif; font-size: clamp(44px, 8vw, 104px); line-height: 1.02; margin: 0; color: var(--green); }
+.home-sub { font-size: clamp(18px, 2.4vw, 28px); margin: 16px 0 8px; }
+.home-summary { color: var(--brown); font-weight: 600; margin: 0 0 28px; }
+.home-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.keys { margin-top: 26px; font-size: 14px; color: #4a5646; }
+
+/* ---------- settings ---------- */
+#settings { min-height: 100%; }
+.topbar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 12px 24px; background: var(--green); color: var(--cream); }
+.topbar h1 { font-family: Arvo, Georgia, serif; font-size: 26px; margin: 0; }
+.topbar .btn.ghost { background: transparent; color: var(--cream); border-color: rgba(246,240,225,.4); }
+.topbar .btn.ghost:hover { background: rgba(246,240,225,.12); }
+.topbar .btn.primary { background: var(--gold); color: var(--green); border-color: var(--gold); }
+.presets { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
+.presets select { border-radius: 999px; padding: 8px 14px; border: 2px solid rgba(246,240,225,.4); background: var(--green); color: var(--cream); max-width: 220px; }
+.settings-wrap { max-width: 1100px; margin: 0 auto; padding: 16px 16px 80px; }
+.autosave { color: #6a7466; font-size: 14px; margin: 4px 0 12px; }
+.card { background: #FBF7EC; border: 2px solid var(--line); border-radius: 18px; padding: 22px 24px; margin-bottom: 20px; }
+.card h2 { font-family: Arvo, Georgia, serif; color: var(--green); margin: 0 0 6px; font-size: 26px; }
+.hint { margin: 0 0 14px; color: #5b6656; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px 18px; margin: 12px 0; }
+.grid.two { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.field { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 14px; color: var(--green); }
+.field input, .field select, .field textarea, .prices input { border: 2px solid var(--line); border-radius: 10px; padding: 8px 10px; background: #fff; font-weight: 400; font-size: 16px; color: var(--ink); width: 100%; }
+.field textarea { resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 3px solid rgba(224,165,38,.6); outline-offset: 1px; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 600; margin-top: 8px; }
+.check input { width: 20px; height: 20px; accent-color: var(--green); }
+.summary { background: var(--tan); border-radius: 10px; padding: 10px 14px; margin: 6px 0 4px; }
+.warn { color: var(--red); font-weight: 600; }
+.muted { color: #7b8576; font-weight: 400; font-size: .8em; }
+.mode-fields { margin: 4px 0 12px 30px; }
+.mode-fields .hint { margin: 0 0 6px; }
+
+table { border-collapse: collapse; }
+.prices { width: 100%; max-width: 720px; }
+.prices th { text-align: left; font-size: 14px; color: var(--brown); padding: 4px 8px; }
+.prices td { padding: 4px 8px; }
+.prices td:nth-child(2) { color: #5b6656; white-space: nowrap; }
+.prices td:last-child { width: 130px; }
+
+.table-scroll { overflow-x: auto; margin-bottom: 14px; }
+.returns th { padding: 6px 8px; font-size: 15px; text-align: left; white-space: nowrap; color: var(--green); }
+.returns thead th { text-align: center; font-family: Arvo, Georgia, serif; font-size: 18px; }
+.returns td { padding: 4px; }
+.ret { border-radius: 10px; text-align: center; min-width: 110px; }
+.ret input { width: 84px; text-align: center; border: 2px solid transparent; border-radius: 8px; padding: 6px; font-size: 18px; font-weight: 700; background: rgba(255,255,255,.75); }
+.ret small { display: block; font-size: 12px; margin-top: 2px; }
+.ret-l { background: #E9B6A8; } .ret-e { background: #EADFC0; } .ret-g { background: #BBD6AE; }
+.ret-r { background: linear-gradient(145deg, #FFE88F, #EDB833 60%, #D9A320); }
+.mini { border: 0; background: transparent; color: var(--red); cursor: pointer; font-size: 14px; padding: 0 2px; }
+
+.round { border-top: 2px dashed var(--line); padding-top: 14px; margin-top: 14px; }
+.round:first-of-type { border-top: 0; margin-top: 0; }
+.round-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.round h3 { font-family: Arvo, Georgia, serif; font-size: 24px; margin: 0; color: var(--green); }
+
+#toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--green); color: var(--cream); padding: 10px 20px; border-radius: 999px; z-index: 50; font-weight: 600; }
+
+/* ---------- player ---------- */
+#player { position: fixed; inset: 0; background: #0d1410; display: flex; }
+#player .viewport { position: relative; flex: 1; overflow: hidden; cursor: pointer; }
+#player .stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; }
+.notes-panel { display: none; width: 340px; padding: 20px; background: #1b231e; color: #e8e3d4; font-size: 17px; line-height: 1.5; overflow-y: auto; white-space: pre-wrap; }
+#player.notes-open .notes-panel { display: block; }
+.hud { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: rgba(20,30,24,.85); color: #F6F0E1; border-radius: 999px; opacity: 0; transition: opacity .3s; z-index: 10; }
+#player.show-hud .hud, .hud:hover, .hud:focus-within { opacity: 1; }
+.hud button { background: transparent; border: 0; color: inherit; padding: 6px 10px; border-radius: 999px; cursor: pointer; font-size: 16px; }
+.hud button:hover { background: rgba(255,255,255,.12); }
+.hud [data-counter] { min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+.hud select { background: #2a362f; color: inherit; border: 0; border-radius: 999px; padding: 6px 10px; max-width: 220px; }
+
+/* ---------- the slide format (matches the original Slides runtime defaults) ---------- */
+.slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+.slide section { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; font-size: 32px; line-height: 1.4; }
+.slide section * { box-sizing: border-box; margin: 0; }
+.slide section div:not([style*="display"]) { display: flex; flex-direction: column; }
+.slide h1 { font-size: 96px; font-weight: 600; line-height: 1.1; }
+.slide h2 { font-size: 64px; font-weight: 600; line-height: 1.15; }
+.slide h3 { font-size: 44px; font-weight: 600; line-height: 1.2; }
+.slide img, .slide video { display: block; }
+.slide .bi-hidden { visibility: hidden; }
+
+@media (max-width: 640px) {
+  .topbar { padding: 10px 16px; }
+  .card { padding: 16px; }
+  .presets { margin-left: 0; }
+}

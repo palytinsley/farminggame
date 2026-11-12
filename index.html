@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Farming Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Open+Sans:wght@400;600;700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<main id="home" class="screen" hidden>
+  <div class="home-bg" style="background-image:url('assets/eae713417868d168cdab012e5831c979.jpg')"></div>
+  <div class="home-card">
+    <p class="eyebrow">Classroom edition</p>
+    <h1 id="home-title">The Farming Game</h1>
+    <p id="home-sub" class="home-sub"></p>
+    <p id="home-summary" class="home-summary"></p>
+    <div class="home-actions">
+      <button class="btn primary big" id="btn-present">▶ Present</button>
+      <button class="btn big" id="btn-settings">⚙ Settings</button>
+      <button class="btn big" id="btn-handout" title="Download a print-ready PDF of the student handout for the current settings">⬇ Make handout</button>
+    </div>
+    <p class="keys">While presenting: → or Space = next, ← = back, F = full screen, N = notes, Esc = exit</p>
+  </div>
+</main>
+
+<main id="settings" class="screen" hidden>
+  <header class="topbar">
+    <button class="btn ghost" id="btn-back">← Home</button>
+    <h1>Settings</h1>
+    <div class="presets">
+      <select id="preset-select" aria-label="Saved setups"></select>
+      <button class="btn ghost" id="preset-save">Save as…</button>
+      <button class="btn ghost" id="preset-delete">Delete</button>
+      <label class="btn ghost file">Import<input type="file" id="preset-import" accept=".json,application/json"></label>
+      <button class="btn ghost" id="preset-export">Export</button>
+      <button class="btn ghost" id="preset-reset">Reset to original</button>
+      <button class="btn ghost" id="btn-handout-2" title="Download a print-ready PDF of the student handout for the current settings">⬇ Make handout</button>
+      <button class="btn primary" id="btn-present-2">▶ Present</button>
+    </div>
+  </header>
+  <div class="settings-wrap"><p class="autosave">Changes save automatically.</p><div id="settings-body"></div></div>
+</main>
+
+<div id="player" class="screen" hidden>
+  <div class="viewport"><div class="stage"></div></div>
+  <aside class="notes-panel"></aside>
+  <div class="hud">
+    <button data-exit title="Exit (Esc)">✕</button>
+    <button data-prev title="Back (←)">‹</button>
+    <span data-counter></span>
+    <button data-next title="Next (→)">›</button>
+    <select data-jump aria-label="Jump to slide"></select>
+    <button data-notes title="Notes (N)">Notes</button>
+    <button data-full title="Full screen (F)">⛶</button>
+  </div>
+</div>
+
+<div id="toast" hidden></div>
+
+<script src="js/templates.js"></script>
+<script src="js/defaults.js"></script>
+<script src="js/presets.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/player.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
